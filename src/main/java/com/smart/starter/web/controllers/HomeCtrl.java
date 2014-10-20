@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class HomeCtrl {
 	
 	@RequestMapping("/")
 	public String home(Locale locale, Model model) {	
