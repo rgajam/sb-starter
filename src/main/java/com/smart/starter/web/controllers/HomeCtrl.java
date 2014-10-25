@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Handles requests for the application home page.
+ * 
+ * @author Rishi
+ * 
  */
 @Controller
 public class HomeCtrl {

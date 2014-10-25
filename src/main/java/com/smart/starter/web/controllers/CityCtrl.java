@@ -40,6 +40,6 @@ public class CityCtrl {
 
 	@RequestMapping("/cities")
 	public String showCities(Locale locale, Model model) {
-		return "city/showCities";
+		return "city/show-cities";
 	}
 }

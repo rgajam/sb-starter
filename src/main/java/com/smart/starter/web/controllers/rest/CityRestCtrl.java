@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.smart.starter.data.model.City;
 import com.smart.starter.data.service.CityRepo;
 
+/**
+ * 
+ * @author Rishi
+ *
+ */
 @RestController
 @RequestMapping("/rest/city")
 public class CityRestCtrl {

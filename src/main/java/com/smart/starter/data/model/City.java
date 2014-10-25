@@ -7,6 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author Rishi
+ *
+ */
 @Entity
 @Table(name="CITY")
 @NamedQuery(name="City.findAll", query="SELECT c FROM City c")

@@ -1,21 +1,21 @@
 <html xmlns:thymeleaf="http://wwww.thymeleaf.org">
 <head>
 <title>Starter</title>
-<div th:replace="fragments/head-common :: head-common">Head (static)</div>
+<div th:replace="fragments/head-common :: head-common">The Static Head Common</div>
 
 </head>
 <body>
-	<div
+	<header
 		th:replace="fragments/header :: header">
-		The Static Header</div>
+		The Static Header</header>
 	<div class="content container">
 
 		<h1>This is a Spring Boot Starter Application</h1>
 		<a href="/cities">List of all Cities</a>
 
 	</div>
-	<div
+	<footer
 		th:replace="fragments/footer :: footer">
-		&copy; 2013 The Static Templates</div>
+		The Static Footer</footer>
 </body>
 </html>
