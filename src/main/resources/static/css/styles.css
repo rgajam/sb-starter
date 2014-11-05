@@ -6,3 +6,16 @@
 .form-group{
 	max-width: 250px;
 }
+
+.form-control.error{
+	border-color: #FF8F8F;
+	background-color: #FFD7D7;
+}
+
+.form-control.error:focus{
+	border: 2px solid #FFD7D7;
+}
+
+label.error{
+	color: #FF4C4C;
+}

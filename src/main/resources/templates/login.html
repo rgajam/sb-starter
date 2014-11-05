@@ -1,0 +1,33 @@
+<html xmlns:thymeleaf="http://wwww.thymeleaf.org">
+<head>
+<title>Starter 404</title>
+<div th:replace="fragments/head-common :: head-common">The Static
+	Head Common</div>
+</head>
+<body>
+	<header th:replace="fragments/header :: header"> The Static
+		Header</header>
+	<div class="content container">
+		<form name="loginForm" role="form">
+			<div class="form-group">
+				<label for="username">User name</label> <input
+					type="email" class="form-control" id="username" name="username"
+					placeholder="Enter email" spellcheck="false"/>
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password</label> <input
+					type="password" class="form-control" id="pwd" name="pwd"
+					placeholder="Password"/>
+			</div>
+			<button type="submit" class="btn btn-primary">Login</button>
+			<p><br/>Don't have an account yet? <br/><a href="/register">Click here to Register</a></p>
+		</form>
+	</div>
+	<footer th:replace="fragments/footer :: footer"> The Static
+		Footer</footer>
+		
+	<script>
+		
+	</script>
+</body>
+</html>

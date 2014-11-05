@@ -1,0 +1,147 @@
+<html xmlns:thymeleaf="http://wwww.thymeleaf.org">
+<head>
+<title>Starter 404</title>
+<div th:replace="fragments/head-common :: head-common">The Static
+	Head Common</div>
+</head>
+<body>
+	<header th:replace="fragments/header :: header"> The Static
+		Header</header>
+	<div class="content container">
+		<form id="registrationFrom" name="registrationFrom" role="form">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label for="firstName"><span class="required-label">*</span>First
+							name</label> <input type="text" class="form-control" id="firstName"
+							name="firstName" spellcheck="false"
+							placeholder="Enter your First name" />
+					</div>
+					<div class="form-group">
+						<label for="lastName"><span class="required-label">*</span>Last
+							name</label> <input type="text" class="form-control" id="lastName"
+							name="lastName" spellcheck="false"
+							placeholder="Enter your Last name" />
+					</div>
+					<div class="form-group">
+						<label for="userName"><span class="required-label">*</span>User
+							name</label> <input type="text" class="form-control" id="userName"
+							name="userName" placeholder="Enter your email" />
+					</div>
+					<div class="form-group">
+						<label for="pwd"> <span class="required-label">*</span>Password
+						</label> <input type="password" class="form-control" id="pwd" name="pwd"
+							placeholder="Password" />
+					</div>
+					<div class="form-group">
+						<label for="confirm_pwd"> <span class="required-label">*</span>Confirm
+							Password
+						</label> <input type="password" class="form-control" id="confirm_pwd"
+							name="confirm_pwd" placeholder="Confirm your Password" />
+					</div>
+					<div class="form-group">
+						<label for="email"><span class="required-label">*</span>Email
+							address</label> <input type="email" class="form-control" id="email"
+							name="email" placeholder="Enter your email address" />
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label for="address"> <span class="required-label">*</span>Address Line 1
+						</label> <input type="text" class="form-control" id="address"
+							name="address" placeholder="Address Line 1" />
+					</div>
+					<div class="form-group">
+						<label for="address2"> Address Line 2
+						</label> <input type="text" class="form-control" id="address2"
+							name="address2" placeholder="Address Line 1" />
+					</div>
+					<div class="form-group">
+						<label for="city"> <span class="required-label">*</span>City
+						</label> <input type="text" class="form-control" id="city"
+							name="city" placeholder="City" />
+					</div>
+					<div class="form-group">
+						<label for="state"> <span class="required-label">*</span>State
+						</label> <input type="text" class="form-control" id="state"
+							name="state" placeholder="State" />
+					</div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Register</button>
+			<p>
+				<br />Already have an account? <br />
+				<a href="/login">Click here to Login</a>
+			</p>
+		</form>
+	</div>
+	<footer th:replace="fragments/footer :: footer"> The Static
+		Footer</footer>
+	<script>
+		$.validator.setDefaults({
+			submitHandler : function() {
+				alert("submitted!");
+			}
+		});
+
+		$()
+				.ready(
+						function() {
+
+							// validate signup form on keyup and submit
+							$("#registrationFrom")
+									.validate(
+											{
+												rules : {
+													firstName : {
+														required : true,
+														minlength : 2
+													},
+													lastName : {
+														required : true,
+														minlength : 2
+													},
+													userName : {
+														required : true,
+														minlength : 2
+													},
+													pwd : {
+														required : true,
+														minlength : 8
+													},
+													confirm_pwd : {
+														required : true,
+														minlength : 8,
+														equalTo : "#pwd"
+													},
+													email : {
+														required : true,
+														email : true
+													}
+												},
+												messages : {
+													firstname : "Please enter your firstname",
+													lastname : "Please enter your lastname",
+													username : {
+														required : "Please enter a username",
+														minlength : "Your username must consist of at least 2 characters"
+													},
+													password : {
+														required : "Please provide a password",
+														minlength : "Your password must be at least 5 characters long"
+													},
+													confirm_password : {
+														required : "Please provide a password",
+														minlength : "Your password must be at least 5 characters long",
+														equalTo : "Please enter the same password as above"
+													},
+													email : "Please enter a valid email address"
+												},
+												submitHandler : function() {
+													alert("Validated!");
+												}
+											});
+						});
+	</script>
+</body>
+</html>
