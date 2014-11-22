@@ -8,7 +8,7 @@
 	<header th:replace="fragments/header :: header"> The Static
 		Header</header>
 	<div class="content container">
-		<form id="registrationFrom" name="registrationFrom" role="form">
+		<form id="registrationFrom" name="registrationFrom" role="form" action="/register" method="POST">
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
@@ -24,13 +24,13 @@
 							placeholder="Enter your Last name" />
 					</div>
 					<div class="form-group">
-						<label for="userName"><span class="required-label">*</span>User
-							name</label> <input type="text" class="form-control" id="userName"
-							name="userName" placeholder="Enter your email" />
+						<label for="username"><span class="required-label">*</span>User
+							name</label> <input type="text" class="form-control" id="username"
+							name="username" placeholder="Enter your email" />
 					</div>
 					<div class="form-group">
-						<label for="pwd"> <span class="required-label">*</span>Password
-						</label> <input type="password" class="form-control" id="pwd" name="pwd"
+						<label for="password"> <span class="required-label">*</span>Password
+						</label> <input type="password" class="form-control" id="password" name="password"
 							placeholder="Password" />
 					</div>
 					<div class="form-group">
@@ -78,18 +78,12 @@
 	<footer th:replace="fragments/footer :: footer"> The Static
 		Footer</footer>
 	<script>
-		$.validator.setDefaults({
-			submitHandler : function() {
-				alert("submitted!");
-			}
-		});
-
 		$()
 				.ready(
 						function() {
 
 							// validate signup form on keyup and submit
-							$("#registrationFrom")
+							/* $("#registrationFrom")
 									.validate(
 											{
 												rules : {
@@ -101,18 +95,18 @@
 														required : true,
 														minlength : 2
 													},
-													userName : {
+													username : {
 														required : true,
 														minlength : 2
 													},
-													pwd : {
+													password : {
 														required : true,
 														minlength : 8
 													},
 													confirm_pwd : {
 														required : true,
 														minlength : 8,
-														equalTo : "#pwd"
+														equalTo : "#password"
 													},
 													email : {
 														required : true,
@@ -128,7 +122,7 @@
 													},
 													password : {
 														required : "Please provide a password",
-														minlength : "Your password must be at least 5 characters long"
+														minlength : "Your password must be at least 2 characters long"
 													},
 													confirm_password : {
 														required : "Please provide a password",
@@ -138,10 +132,10 @@
 													email : "Please enter a valid email address"
 												},
 												submitHandler : function() {
-													alert("Validated!");
+													form.submit();
 												}
 											});
-						});
+						}); */
 	</script>
 </body>
 </html>
