@@ -63,4 +63,11 @@ public class AccountUserDetails implements UserDetails {
 		return true;
 	}
 
+	/**
+	 * @return the account
+	 */
+	public User getAccount() {
+		return account;
+	}
+
 }

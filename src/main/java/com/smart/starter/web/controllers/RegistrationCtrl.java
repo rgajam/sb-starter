@@ -44,20 +44,15 @@ public class RegistrationCtrl {
 		StandardPasswordEncoder encoder = new StandardPasswordEncoder();
 		User user = new User();
 		user.setUsername(username);
-		user.setPassword(password);
+		user.setPassword(encoder.encode(password));
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
 		user.setEmail(email);
 //		user.setStatus(status);
 //		List<Roles> roles = new ArrayList<>();
 //		user.setRoles(roles);
-		System.out.println(username);
-		System.out.println(password + " : " + encoder.encode(password));
-		System.out.println(firstName);
-		System.out.println(lastName);
-		System.out.println(email);
 		usersRepository.save(user);
-		return "registration";
+		return "login";
 	}
 	
 	@RequestMapping("/login")

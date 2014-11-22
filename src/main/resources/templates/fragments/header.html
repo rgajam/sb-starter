@@ -19,7 +19,7 @@
 									value="Log out" />
 							</form>
 							<p class="navbar-text pull-right"
-								th:text="${currentUser?.username}">sample_user</p>
+								th:text="${currentUser.account.firstName + ' ' + currentUser.account.lastName}">sample_user</p>
 						</div>
 						<div th:case="false" class="pull-right">
 							<a class="btn navbar-btn btn-primary" href="/register">SignUp</a>

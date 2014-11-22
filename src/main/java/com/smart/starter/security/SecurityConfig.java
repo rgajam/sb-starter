@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
 /**
  * @author Rishi, created on Nov 5, 2014
@@ -35,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //			.withUser("user")
 //			.password("password")
 //			.roles("USER");
-		builder.userDetailsService(userDetailsService).passwordEncoder(new ShaPasswordEncoder(256));
+		builder.userDetailsService(userDetailsService).passwordEncoder(new StandardPasswordEncoder());
 	}
 	
 	@Bean  
