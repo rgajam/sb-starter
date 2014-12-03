@@ -6,3 +6,19 @@
 .form-group{
 	max-width: 250px;
 }
+
+.form-control.error{
+	background-color: #F2DEDE;
+}
+
+.form-control.error:focus{
+	border: 1px solid #FF3C3C;
+  	outline: 0;
+  	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 60, 60, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 60, 60, .6);
+}
+
+label.error{
+	color: #FF4C4C;
+	font-weight: normal;
+}

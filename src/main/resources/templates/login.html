@@ -1,0 +1,77 @@
+<html xmlns:thymeleaf="http://wwww.thymeleaf.org">
+<head>
+<title>Starter 404</title>
+<div th:replace="fragments/head-common :: head-common">The Static
+	Head Common</div>
+</head>
+<body>
+	<header th:replace="fragments/header :: header"> The Static
+		Header</header>
+	<div class="content container">
+		<form id="sign-in" name="sign-in" th:action="${loginUrl}" action="#"
+			method="POST" role="form">
+			<div th:if="${param.error}" class="alert alert-danger">Invalid
+				username and password.</div>
+			<div th:if="${param.logout}" class="alert alert-success">You
+				have been logged out.</div>
+			<fieldset>
+				<legend>Please Login</legend>
+				<div class="form-group">
+					<label for="username">User name</label> <input type="text"
+						class="form-control" id="username" name="username"
+						placeholder="Enter username" spellcheck="false" autofocus="true" />
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password</label> <input type="password"
+						class="form-control" id="password" name="password"
+						placeholder="Enter Password" />
+				</div>
+			</fieldset>
+			<button type="submit" class="btn btn-primary">Login</button>
+			<p>
+				<br />Don't have an account yet? <br /> <a href="/register">Click
+					here to Register</a>
+			</p>
+
+		</form>
+	</div>
+	<footer th:replace="fragments/footer :: footer"> The Static
+		Footer</footer>
+
+	<script>
+		$()
+				.ready(
+						function() {
+
+							// validate signup form on keyup and submit
+							$("#sign-in")
+									.validate(
+											{
+												rules : {
+													username : {
+														required : true,
+														minlength : 2
+													},
+													password : {
+														required : true,
+														minlength : 2
+													}
+												},
+												messages : {
+													username : {
+														required : "Please enter a username",
+														minlength : "Your username must consist of at least 2 characters"
+													},
+													password : {
+														required : "Please provide a password",
+														minlength : "Your password must be at least 2 characters long"
+													}
+												},
+												submitHandler : function() {
+													form.submit();
+												}
+											});
+						});
+	</script>
+</body>
+</html>

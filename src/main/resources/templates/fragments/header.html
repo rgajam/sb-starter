@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <body>
-    <header class="text-center" th:fragment="header">
+<head>
+</head>
+<body>
+	<header class="text-center" th:fragment="header">
 		<nav class="nav navbar-default navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="pull-left">
 					<a class="navbar-brand" href="/">SMART Starter</a>
 				</div>
+				<div
+					th:with="currentUser=${#httpServletRequest.userPrincipal?.principal}">
+					<div th:switch="${currentUser != null ? true : false}">
+						<div th:case="true">
+							<form class="navbar-form pull-right" th:action="@{/logout}"
+								method="post">
+								<input class="btn btn-default" type="submit"
+									value="Log out" />
+							</form>
+							<p class="navbar-text pull-right"
+								th:text="${currentUser.account.firstName + ' ' + currentUser.account.lastName}">sample_user</p>
+						</div>
+						<div th:case="false" class="pull-right">
+							<a class="btn navbar-btn btn-primary" href="/register">SignUp</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</nav>
 	</header>
-  </body>
+</body>
 </html>

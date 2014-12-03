@@ -13,7 +13,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="CITY")
+@Table(name="city")
 @NamedQuery(name="City.findAll", query="SELECT c FROM City c")
 public class City {
 	
