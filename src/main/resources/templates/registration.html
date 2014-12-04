@@ -8,7 +8,8 @@
 	<header th:replace="fragments/header :: header"> The Static
 		Header</header>
 	<div class="content container">
-		<form id="registrationFrom" name="registrationFrom" role="form" action="/register" method="POST">
+		<form id="registrationFrom" name="registrationFrom" role="form"
+			action="/register" method="POST">
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
@@ -30,8 +31,8 @@
 					</div>
 					<div class="form-group">
 						<label for="password"> <span class="required-label">*</span>Password
-						</label> <input type="password" class="form-control" id="password" name="password"
-							placeholder="Password" />
+						</label> <input type="password" class="form-control" id="password"
+							name="password" placeholder="Password" />
 					</div>
 					<div class="form-group">
 						<label for="confirm_pwd"> <span class="required-label">*</span>Confirm
@@ -47,31 +48,32 @@
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
-						<label for="address"> <span class="required-label">*</span>Address Line 1
+						<label for="address"> <span class="required-label">*</span>Address
+							Line 1
 						</label> <input type="text" class="form-control" id="address"
 							name="address" placeholder="Address Line 1" />
 					</div>
 					<div class="form-group">
-						<label for="address2"> Address Line 2
-						</label> <input type="text" class="form-control" id="address2"
-							name="address2" placeholder="Address Line 1" />
+						<label for="address2"> Address Line 2 </label> <input type="text"
+							class="form-control" id="address2" name="address2"
+							placeholder="Address Line 1" />
 					</div>
 					<div class="form-group">
 						<label for="city"> <span class="required-label">*</span>City
-						</label> <input type="text" class="form-control" id="city"
-							name="city" placeholder="City" />
+						</label> <input type="text" class="form-control" id="city" name="city"
+							placeholder="City" />
 					</div>
 					<div class="form-group">
 						<label for="state"> <span class="required-label">*</span>State
-						</label> <input type="text" class="form-control" id="state"
-							name="state" placeholder="State" />
+						</label> <input type="text" class="form-control" id="state" name="state"
+							placeholder="State" />
 					</div>
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary">Register</button>
 			<p>
-				<br />Already have an account? <br />
-				<a href="/login">Click here to Login</a>
+				<br />Already have an account? <br /> <a href="/login">Click
+					here to Login</a>
 			</p>
 		</form>
 	</div>
@@ -83,7 +85,7 @@
 						function() {
 
 							// validate signup form on keyup and submit
-							/* $("#registrationFrom")
+							$("#registrationFrom")
 									.validate(
 											{
 												rules : {
@@ -118,15 +120,15 @@
 													lastname : "Please enter your lastname",
 													username : {
 														required : "Please enter a username",
-														minlength : "Your username must consist of at least 2 characters"
+														minlength : "Your username must consist of at least {0} characters"
 													},
 													password : {
 														required : "Please provide a password",
-														minlength : "Your password must be at least 2 characters long"
+														minlength : "Your password must be at least {0} characters long"
 													},
 													confirm_password : {
 														required : "Please provide a password",
-														minlength : "Your password must be at least 5 characters long",
+														minlength : "Your password must be at least {0} characters long",
 														equalTo : "Please enter the same password as above"
 													},
 													email : "Please enter a valid email address"
@@ -135,7 +137,7 @@
 													form.submit();
 												}
 											});
-						}); */
+						});
 	</script>
 </body>
 </html>
