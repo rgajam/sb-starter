@@ -52,7 +52,7 @@ public class RegistrationCtrl {
 //		List<Roles> roles = new ArrayList<>();
 //		user.setRoles(roles);
 		usersRepository.save(user);
-		return "login";
+		return "redirect:login";
 	}
 	
 	@RequestMapping("/login")
